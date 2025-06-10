@@ -6,7 +6,12 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "type-check": "tsc --noEmit",
+    "backup": "bash ./scripts/backup.sh",
+    "reset": "git checkout main && git pull origin main && rm -rf node_modules package-lock.json && npm install",
+    "restore:day1": "git checkout v0.1.0-day1-complete",
+    "status": "git status && echo '\n=== Current branch ===' && git branch --show-current && echo '\n=== Recent commits ===' && git log --oneline -5"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",
